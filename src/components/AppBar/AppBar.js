@@ -1,15 +1,13 @@
-import { Link } from 'react-router-dom';
+import { AuthNav } from 'components/AuthNav/AuthNav';
+import { MainNav } from 'components/MainNav/MainNav';
+import { Header } from './AppBar.styled';
 
 export const AppBar = () => {
   return (
-    <header>
-      <p>Home</p>
-      <p>Login/Register component</p>
-      <Link to="/phonebook">Phonebook</Link>
-      <br />
-      <Link to="/login">login</Link>
-      <br />
-      <Link to="/register">register</Link>
-    </header>
+    <Header>
+      <MainNav />
+      <AuthNav />
+      {/* <UserNav /> or <AuthNav /> */}
+    </Header>
   );
 };
