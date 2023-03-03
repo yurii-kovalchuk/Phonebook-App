@@ -1,3 +1,5 @@
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
 
 import { Phonebook } from 'pages/Phonebook/Phonebook';
@@ -8,14 +10,17 @@ import { Login } from 'pages/Login/Login';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
-        <Route path="phonebook" element={<Phonebook />} />
-        <Route path="*" element={<Home />} />
-      </Route>
-    </Routes>
+    <>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="phonebook" element={<Phonebook />} />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </>
   );
 };

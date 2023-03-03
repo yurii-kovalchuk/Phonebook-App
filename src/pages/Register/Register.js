@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/operations';
 import {
   RegisterWrap,
   RegisterTitle,
@@ -8,6 +10,8 @@ import {
 } from './Register.styled';
 
 export const Register = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
     console.dir({
@@ -15,6 +19,14 @@ export const Register = () => {
       email: e.currentTarget.elements.email.value,
       password: e.currentTarget.elements.password.value,
     });
+
+    dispatch(
+      register({
+        name: e.currentTarget.elements.name.value,
+        email: e.currentTarget.elements.email.value,
+        password: e.currentTarget.elements.password.value,
+      })
+    );
     e.currentTarget.reset();
   };
   return (
@@ -37,7 +49,7 @@ export const Register = () => {
           Password
           <RegisterInput type="password" name="password" required />
         </RegisterLabel>
-        <RegisterBtn type="submit">Log in</RegisterBtn>
+        <RegisterBtn type="submit">Register</RegisterBtn>
       </form>
     </RegisterWrap>
   );

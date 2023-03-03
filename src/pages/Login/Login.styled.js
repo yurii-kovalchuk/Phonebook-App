@@ -11,10 +11,12 @@ export const LoginWrap = styled.div`
 export const LoginTitle = styled.h2`
   text-align: center;
   margin: 0 0 50px 0;
+  font-weight: 400;
 `;
 
 export const LoginAccent = styled.span`
   color: #00bfff;
+  font-weight: 700;
 `;
 
 export const LoginLabel = styled.label`

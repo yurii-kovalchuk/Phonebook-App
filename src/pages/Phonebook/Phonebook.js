@@ -1,18 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-import { changeValue } from '../../redux/filterSlice';
+import { changeValue } from '../../redux/filter/slice';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { ContactsList } from '../../components/ContactsList/ContactsList';
 import { AppWrapper } from './Phonebook.styled';
+import { getContacts, getError, getIsLoading } from 'redux/contacts/selectors';
+import { getFilter } from 'redux/filter/selectors';
 import {
-  getContacts,
-  getError,
-  getFilter,
-  getIsLoading,
-} from 'redux/selectors';
-import { addContact, fetchContacts, deleteContact } from 'redux/operations';
+  addContact,
+  fetchContacts,
+  deleteContact,
+} from 'redux/contacts/operations';
 
 export const Phonebook = () => {
   const contacts = useSelector(getContacts);

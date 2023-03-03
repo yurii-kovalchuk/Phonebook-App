@@ -11,10 +11,12 @@ export const RegisterWrap = styled.div`
 export const RegisterTitle = styled.h2`
   text-align: center;
   margin: 0 0 50px 0;
+  font-weight: 400;
 `;
 
 export const RegisterAccent = styled.span`
   color: #00bfff;
+  font-weight: 700;
 `;
 
 export const RegisterLabel = styled.label`

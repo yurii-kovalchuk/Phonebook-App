@@ -10,11 +10,13 @@ import {
 export const Login = () => {
   const handleSubmit = e => {
     e.preventDefault();
-    console.dir({
-      email: e.currentTarget.elements.email.value,
-      password: e.currentTarget.elements.password.value,
+
+    const form = e.currentTarget;
+    console.log({
+      email: form.elements.email.value,
+      password: form.elements.password.value,
     });
-    e.currentTarget.reset();
+    form.reset();
   };
   return (
     <LoginWrap>
