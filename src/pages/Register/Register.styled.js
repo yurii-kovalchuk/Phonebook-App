@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoginWrap = styled.div`
+export const RegisterWrap = styled.div`
   width: 300px;
   position: absolute;
   top: 50%;
@@ -8,18 +8,22 @@ export const LoginWrap = styled.div`
   transform: translate(-50%, -50%) scale(1);
 `;
 
-export const LoginTitle = styled.h2`
+export const RegisterTitle = styled.h2`
   text-align: center;
   margin: 0 0 50px 0;
 `;
 
-export const LoginLabel = styled.label`
+export const RegisterAccent = styled.span`
+  color: #00bfff;
+`;
+
+export const RegisterLabel = styled.label`
   display: block;
   margin-top: 10px;
   color: grey;
 `;
 
-export const LoginInput = styled.input`
+export const RegisterInput = styled.input`
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -35,7 +39,7 @@ export const LoginInput = styled.input`
   }
 `;
 
-export const LoginBtn = styled.button`
+export const RegisterBtn = styled.button`
   display: block;
   width: 100%;
   margin: 20px auto 0;

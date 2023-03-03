@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { changeValue } from '../../redux/filterSlice';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
-import { ContactList } from '../../components/ContactList/ContactList';
+import { ContactsList } from '../../components/ContactsList/ContactsList';
 import { AppWrapper } from './Phonebook.styled';
 import {
   getContacts,
@@ -63,7 +63,7 @@ export const Phonebook = () => {
       <h2>Contacts</h2>
       <Filter value={filter} onChange={updateFilter} />
       {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList contacts={vivsibleContacts} onDelete={deleteContacts} />
+      <ContactsList contacts={vivsibleContacts} onDelete={deleteContacts} />
     </AppWrapper>
   );
 };
