@@ -12,6 +12,6 @@ export const MainNavLink = styled(NavLink)`
   }
 
   &:active {
-    text-shadow: yellow 1px 0 10px;
+    text-shadow: #188ce8 1px 0 10px;
   }
 `;
