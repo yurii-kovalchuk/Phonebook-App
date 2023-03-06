@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/operations';
 import {
   LoginWrap,
   LoginTitle,
@@ -8,14 +10,17 @@ import {
 } from './Login.styled';
 
 export const Login = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
-
     const form = e.currentTarget;
-    console.log({
-      email: form.elements.email.value,
-      password: form.elements.password.value,
-    });
+    dispatch(
+      logIn({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
     form.reset();
   };
   return (

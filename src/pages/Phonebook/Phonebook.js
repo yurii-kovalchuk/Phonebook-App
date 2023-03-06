@@ -6,8 +6,12 @@ import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { ContactsList } from '../../components/ContactsList/ContactsList';
 import { AppWrapper } from './Phonebook.styled';
-import { getContacts, getError, getIsLoading } from 'redux/contacts/selectors';
-import { getFilter } from 'redux/filter/selectors';
+import {
+  selectContacts,
+  selectError,
+  selectIsLoading,
+} from 'redux/contacts/selectors';
+import { selectFilter } from 'redux/filter/selectors';
 import {
   addContact,
   fetchContacts,
@@ -15,10 +19,10 @@ import {
 } from 'redux/contacts/operations';
 
 export const Phonebook = () => {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -11,7 +11,7 @@ import { Login } from 'pages/Login/Login';
 export const App = () => {
   return (
     <>
-      <ToastContainer />
+      <ToastContainer autoClose={1000} position="top-center" />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

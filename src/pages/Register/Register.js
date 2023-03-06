@@ -14,20 +14,15 @@ export const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.dir({
-      name: e.currentTarget.elements.name.value,
-      email: e.currentTarget.elements.email.value,
-      password: e.currentTarget.elements.password.value,
-    });
-
+    const form = e.currentTarget;
     dispatch(
       register({
-        name: e.currentTarget.elements.name.value,
-        email: e.currentTarget.elements.email.value,
-        password: e.currentTarget.elements.password.value,
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
       })
     );
-    e.currentTarget.reset();
+    form.reset();
   };
   return (
     <RegisterWrap>
