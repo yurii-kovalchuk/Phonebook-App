@@ -43,8 +43,9 @@ export const Text = styled.p`
   font-size: 18px;
 `;
 
-export const Phone = styled(Text)`
+export const Phone = styled.a`
   margin: 0;
+  text-decoration: none;
   font-size: 14px;
   color: gray;
 `;

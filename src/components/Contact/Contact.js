@@ -3,7 +3,7 @@ import { MdDelete } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { Item, NameWrapper, Letters, Text, Phone, Btn } from './Contact.styled';
 
-export const Contact = ({ info: { id, name, phone }, onDelete }) => {
+export const Contact = ({ info: { id, name, number }, onDelete }) => {
   return (
     <Item>
       <NameWrapper>
@@ -16,8 +16,8 @@ export const Contact = ({ info: { id, name, phone }, onDelete }) => {
         </Letters>
         <div>
           <Text>{name}</Text>
-          <Phone>
-            <BsTelephoneFill size={12} /> {phone}
+          <Phone href={`tel: &{number}`}>
+            <BsTelephoneFill size={12} /> {number}
           </Phone>
         </div>
       </NameWrapper>
@@ -37,7 +37,7 @@ Contact.propTypes = {
   info: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };

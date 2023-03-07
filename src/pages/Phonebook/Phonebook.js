@@ -17,6 +17,7 @@ import {
   fetchContacts,
   deleteContact,
 } from 'redux/contacts/operations';
+import { toast } from 'react-toastify';
 
 export const Phonebook = () => {
   const contacts = useSelector(selectContacts);
@@ -29,15 +30,15 @@ export const Phonebook = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const addContacts = (name, phone) => {
+  const addContacts = (name, number) => {
     if (
       contacts.find(
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      alert(`${name} is already in contacts`);
+      toast.error(`Contact is already in list`);
     } else {
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
     }
   };
 
