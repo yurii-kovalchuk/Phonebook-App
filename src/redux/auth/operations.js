@@ -14,7 +14,7 @@ export const register = createAsyncThunk(
   async (userRegInfo, thunkApi) => {
     try {
       const { data } = await axios.post('/users/signup', userRegInfo);
-      toast('Success');
+      toast('Register successfully');
       setAuthToken(data.token);
       return data;
     } catch (err) {
@@ -29,7 +29,7 @@ export const logIn = createAsyncThunk(
   async (userLogInfo, thunkApi) => {
     try {
       const { data } = await axios.post('/users/login', userLogInfo);
-      toast.success('Success');
+      toast.success('Log ig successfully');
       setAuthToken(data.token);
       return data;
     } catch (err) {
@@ -42,7 +42,7 @@ export const logIn = createAsyncThunk(
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
   try {
     const { data } = await axios.post('/users/logout');
-    toast.success('Success');
+    toast.success('Log out successfully');
     clearAuthToken();
     return data;
   } catch (err) {
