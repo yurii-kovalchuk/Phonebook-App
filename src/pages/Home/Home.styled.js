@@ -9,6 +9,9 @@ export const HomeWrap = styled.div`
 `;
 export const HomeTitle = styled.h1`
   margin: 0;
+  font-size: 48px;
+  text-align: center;
+  line-height: 1.5;
 `;
 
 export const HomeAccent = styled.span`
@@ -18,54 +21,51 @@ export const HomeAccent = styled.span`
 export const HomeNavigate = styled.div`
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  flex-basis: 45%;
+  justify-content: center;
 `;
 
 export const HomeLink = styled(Link)`
-  width: 45%;
-`;
-
-export const HomeLoginBtn = styled.button`
-  display: block;
-  width: 100%;
-  margin: 20px auto 0;
+  width: 160px;
   padding: 10px;
-
+  box-sizing: border-box;
   cursor: pointer;
+
+  text-decoration: none;
+  text-align: center;
 
   background-color: #00bfff;
   color: #f0ffff;
-
-  border: transparent;
-  border-radius: 5px;
-
-  &:hover,
-  :focus {
-    background-color: #188ce8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  }
-`;
-
-export const HomeRegisterBtn = styled.button`
-  display: block;
-  width: 100%;
-  margin: 20px auto 0;
-  padding: 10px;
-
-  cursor: pointer;
-
-  color: #00bfff;
-  background-color: #f8f8ff;
 
   border: 1px solid #00bfff;
   border-radius: 5px;
 
   &:hover,
   :focus {
-    color: #f0ffff;
     background-color: #188ce8;
+    border-color: #188ce8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
+`;
+
+export const HomeLinkRegister = styled(HomeLink)`
+  color: #00bfff;
+  background-color: #f8f8ff;
+
+  &:hover,
+  :focus {
+    color: #f0ffff;
+  }
+`;
+
+export const HomeDivider = styled.div`
+  width: 0px;
+  margin: 0 20px;
+  border-right: 1px solid #00bfff;
+  // border-right: 1px solid #000000;
+`;
+
+export const HomeLinkAddContact = styled(HomeLink)`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;

@@ -13,7 +13,7 @@ export const UserNav = () => {
   };
   return (
     <UserWrap>
-      <span>Hello, {userName} </span>
+      <span>Hi, {userName} </span>
       <LogOutBtn onClick={handleClick}>
         <span>Log out</span>
         <LogOutIcon />
