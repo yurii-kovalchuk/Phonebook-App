@@ -12,6 +12,7 @@ import { Login } from 'pages/Login/Login';
 import { refresh } from 'redux/auth/operations';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from 'components/RestrictedRoute';
+import { PrivateRoute } from 'components/PrivateRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            {/* <Route path="register" element={<Register />} /> */}
             <Route
               path="register"
               element={
@@ -40,7 +40,6 @@ export const App = () => {
                 />
               }
             />
-            {/* <Route path="login" element={<Login />} /> */}
             <Route
               path="login"
               element={
@@ -50,7 +49,12 @@ export const App = () => {
                 />
               }
             />
-            <Route path="phonebook" element={<Phonebook />} />
+            <Route
+              path="phonebook"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Phonebook />} />
+              }
+            />
             <Route path="*" element={<Home />} />
           </Route>
         </Routes>

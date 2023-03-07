@@ -18,6 +18,7 @@ export const register = createAsyncThunk(
       setAuthToken(data.token);
       return data;
     } catch (err) {
+      toast.error('Oops! Something went wrong');
       return thunkApi.rejectWithValue(err.message);
     }
   }
@@ -32,6 +33,7 @@ export const logIn = createAsyncThunk(
       setAuthToken(data.token);
       return data;
     } catch (err) {
+      toast.error('Oops! Something went wrong');
       return thunkApi.rejectWithValue(err.message);
     }
   }
@@ -44,6 +46,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
     clearAuthToken();
     return data;
   } catch (err) {
+    toast.error('Oops! Something went wrong');
     return thunkApi.rejectWithValue(err.message);
   }
 });
@@ -60,6 +63,7 @@ export const refresh = createAsyncThunk('auth/refresh', async (_, thunkApi) => {
     const { data } = await axios.get('/users/current');
     return data;
   } catch (err) {
+    toast.error('Oops! Something went wrong');
     return thunkApi.rejectWithValue(err.message);
   }
 });

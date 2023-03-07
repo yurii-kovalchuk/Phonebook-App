@@ -11,7 +11,7 @@ export const UserNav = () => {
   };
   return (
     <div>
-      <span>Hello {userName} </span>
+      <span>Hello, {userName} </span>
       <button onClick={handleClick}>Log Out</button>
     </div>
   );

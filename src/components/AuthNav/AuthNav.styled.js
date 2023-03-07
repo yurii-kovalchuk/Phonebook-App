@@ -8,10 +8,10 @@ export const AuthNavLink = styled(NavLink)`
 
   &:hover,
   :focus {
-    text-shadow: #00bfff 1px 0 10px;
+    color: #00bfff;
   }
 
-  &:active {
-    text-shadow: #188ce8 1px 0 10px;
+  &.active {
+    color: #00bfff;
   }
 `;
