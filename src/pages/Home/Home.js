@@ -12,7 +12,7 @@ import {
   HomeWrap,
 } from './Home.styled';
 
-export const Home = () => {
+const Home = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const name = useSelector(selectUserName);
   return (
@@ -43,3 +43,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

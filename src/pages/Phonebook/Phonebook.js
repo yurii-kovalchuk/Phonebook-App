@@ -19,7 +19,7 @@ import {
 } from 'redux/contacts/operations';
 import { toast } from 'react-toastify';
 
-export const Phonebook = () => {
+const Phonebook = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
   const isLoading = useSelector(selectIsLoading);
@@ -69,3 +69,5 @@ export const Phonebook = () => {
     </PhonebookWrap>
   );
 };
+
+export default Phonebook;

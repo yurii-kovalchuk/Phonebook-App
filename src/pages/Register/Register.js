@@ -11,7 +11,7 @@ import {
   RegisterBtn,
 } from './Register.styled';
 
-export const Register = () => {
+const Register = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -51,3 +51,5 @@ export const Register = () => {
     </RegisterWrap>
   );
 };
+
+export default Register;

@@ -9,7 +9,7 @@ import {
   LoginBtn,
 } from './Login.styled';
 
-export const Login = () => {
+const Login = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -44,3 +44,5 @@ export const Login = () => {
     </LoginWrap>
   );
 };
+
+export default Login;

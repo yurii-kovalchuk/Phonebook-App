@@ -1,18 +1,22 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { Phonebook } from 'pages/Phonebook/Phonebook';
-import { Layout } from 'components/Layout/Layout';
-import { Home } from 'pages/Home/Home';
-import { Register } from 'pages/Register/Register';
-import { Login } from 'pages/Login/Login';
 import { refresh } from 'redux/auth/operations';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
+import { Layout } from 'components/Layout/Layout';
+
+const Home = lazy(() => import('../../pages/Home/Home.js'));
+const Register = lazy(() => import('../../pages/Register/Register.js'));
+const Login = lazy(() => import('../../pages/Login/Login.js'));
+const Phonebook = lazy(() => import('../../pages/Phonebook/Phonebook.js'));
+// import { Home } from 'pages/Home/Home';
+// import { Register } from 'pages/Register/Register';
+// import { Login } from 'pages/Login/Login';
+// import { Phonebook } from 'pages/Phonebook/Phonebook';
 
 export const App = () => {
   const dispatch = useDispatch();
