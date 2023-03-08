@@ -13,10 +13,6 @@ const Home = lazy(() => import('../../pages/Home/Home.js'));
 const Register = lazy(() => import('../../pages/Register/Register.js'));
 const Login = lazy(() => import('../../pages/Login/Login.js'));
 const Phonebook = lazy(() => import('../../pages/Phonebook/Phonebook.js'));
-// import { Home } from 'pages/Home/Home';
-// import { Register } from 'pages/Register/Register';
-// import { Login } from 'pages/Login/Login';
-// import { Phonebook } from 'pages/Phonebook/Phonebook';
 
 export const App = () => {
   const dispatch = useDispatch();

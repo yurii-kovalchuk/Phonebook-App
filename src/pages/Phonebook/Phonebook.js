@@ -12,12 +12,7 @@ import {
   selectIsLoading,
 } from 'redux/contacts/selectors';
 import { selectFilter } from 'redux/filter/selectors';
-import {
-  addContact,
-  fetchContacts,
-  deleteContact,
-  updateContact,
-} from 'redux/contacts/operations';
+import { addContact, fetchContacts } from 'redux/contacts/operations';
 import { toast } from 'react-toastify';
 
 const Phonebook = () => {
@@ -43,14 +38,6 @@ const Phonebook = () => {
     }
   };
 
-  const deleteContacts = id => {
-    dispatch(deleteContact(id));
-  };
-
-  const updateContacts = (id, name, number) => {
-    dispatch(updateContact([id, { name, number }]));
-  };
-
   const updateFilter = e => {
     dispatch(changeValue(e.target.value));
   };
@@ -70,11 +57,7 @@ const Phonebook = () => {
       <h2>Contacts</h2>
       <Filter value={filter} onChange={updateFilter} />
       {isLoading && !error && <b>Request in progress...</b>}
-      <ContactsList
-        contacts={vivsibleContacts}
-        onDelete={deleteContacts}
-        onUpdate={updateContacts}
-      />
+      <ContactsList contacts={vivsibleContacts} />
     </PhonebookWrap>
   );
 };

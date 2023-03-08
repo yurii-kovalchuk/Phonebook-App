@@ -53,17 +53,19 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    [updateContact.pending](state) {
+      state.isLoading = true;
+    },
     [updateContact.fulfilled](state, action) {
-      // state.isLoading = false;
-      // state.error = null;
-      const index = state.items.findIndex(
-        task => task.id === action.payload.id
-      );
-      state.items.splice(index, 1, {
-        name: action.payload.name,
-        number: action.payload.number,
-      });
-      // state.items.push(action.payload);
+      state.isLoading = false;
+      state.error = null;
+      const { id, name, number } = action.payload;
+      const index = state.items.findIndex(contact => contact.id === id);
+      state.items.splice(index, 1, { id, name, number });
+    },
+    [updateContact.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
     },
   },
 });
