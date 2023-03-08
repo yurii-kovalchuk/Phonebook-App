@@ -5,7 +5,7 @@ import { changeValue } from '../../redux/filter/slice';
 import { Filter } from 'components/Filter/Filter';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { ContactsList } from '../../components/ContactsList/ContactsList';
-import { AppWrapper } from './Phonebook.styled';
+import { PhonebookWrap } from './Phonebook.styled';
 import {
   selectContacts,
   selectError,
@@ -60,15 +60,12 @@ export const Phonebook = () => {
   const vivsibleContacts = filteredContacts();
 
   return (
-    <AppWrapper>
-      <h1>Phonebook</h1>
-
+    <PhonebookWrap>
       <ContactForm addContacts={addContacts} />
-
       <h2>Contacts</h2>
       <Filter value={filter} onChange={updateFilter} />
       {isLoading && !error && <b>Request in progress...</b>}
       <ContactsList contacts={vivsibleContacts} onDelete={deleteContacts} />
-    </AppWrapper>
+    </PhonebookWrap>
   );
 };

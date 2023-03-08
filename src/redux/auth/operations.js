@@ -63,7 +63,7 @@ export const refresh = createAsyncThunk('auth/refresh', async (_, thunkApi) => {
     const { data } = await axios.get('/users/current');
     return data;
   } catch (err) {
-    toast.error('Oops! Something went wrong');
+    // toast.error('Oops! Something went wrong');
     return thunkApi.rejectWithValue(err.message);
   }
 });
