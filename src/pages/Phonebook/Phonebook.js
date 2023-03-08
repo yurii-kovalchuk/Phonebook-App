@@ -16,6 +16,7 @@ import {
   addContact,
   fetchContacts,
   deleteContact,
+  updateContact,
 } from 'redux/contacts/operations';
 import { toast } from 'react-toastify';
 
@@ -46,6 +47,10 @@ const Phonebook = () => {
     dispatch(deleteContact(id));
   };
 
+  const updateContacts = (id, name, number) => {
+    dispatch(updateContact([id, { name, number }]));
+  };
+
   const updateFilter = e => {
     dispatch(changeValue(e.target.value));
   };
@@ -65,7 +70,11 @@ const Phonebook = () => {
       <h2>Contacts</h2>
       <Filter value={filter} onChange={updateFilter} />
       {isLoading && !error && <b>Request in progress...</b>}
-      <ContactsList contacts={vivsibleContacts} onDelete={deleteContacts} />
+      <ContactsList
+        contacts={vivsibleContacts}
+        onDelete={deleteContacts}
+        onUpdate={updateContacts}
+      />
     </PhonebookWrap>
   );
 };

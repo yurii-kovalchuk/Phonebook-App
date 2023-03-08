@@ -10,7 +10,7 @@ import {
   DeleteBtn,
 } from './Contact.styled';
 
-export const Contact = ({ info: { id, name, number }, onDelete }) => {
+export const Contact = ({ info: { id, name, number }, onDelete, onUpdate }) => {
   return (
     <Item>
       <NameWrapper>
@@ -28,6 +28,13 @@ export const Contact = ({ info: { id, name, number }, onDelete }) => {
           </Phone>
         </div>
       </NameWrapper>
+      <button
+        type="button"
+        onClick={() => {
+          const newName = 'sss';
+          onUpdate(id, (name = newName), number);
+        }}
+      ></button>
       <DeleteBtn
         type="button"
         onClick={() => {
