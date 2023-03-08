@@ -3,6 +3,7 @@ import { RiAddCircleFill } from 'react-icons/ri';
 import { Form, Field } from 'formik';
 
 export const FormWrapper = styled(Form)`
+  margin-bottom: 50px;
   padding: 30px 10px;
   text-align: center;
   border-radius: 5px;

@@ -6,6 +6,9 @@ export const Item = styled.li`
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #F5F5F5;
+  border-radius: 5px;
+
+  background-color: white;
   &: focus, :hover {
     background-color: #F5F5F5;
   }
@@ -50,7 +53,7 @@ export const Phone = styled.a`
   color: gray;
 `;
 
-export const Btn = styled.button`
+export const DeleteBtn = styled.button`
   display: block;
   margin-left: 20px;
   padding: 5px;
@@ -58,16 +61,25 @@ export const Btn = styled.button`
   height: 24px;
   border: transparent;
   border-radius: 4px;
-  background-color: crimson;
+  background-color: grey;
   color: #f0ffff;
   cursor: pointer;
 
   &:hover,
   :focus {
-    background-color: #b22222;
+    background-color: crimson;
   }
 
   &:active {
-    background-color: darkred;
+    background-color: #b22222;
   }
+
+  // &:hover,
+  // :focus {
+  //   background-color: #b22222;
+  // }
+
+  // &:active {
+  //   background-color: darkred;
+  // }
 `;

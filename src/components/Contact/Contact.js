@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import { MdDelete } from 'react-icons/md';
 import { BsTelephoneFill } from 'react-icons/bs';
-import { Item, NameWrapper, Letters, Text, Phone, Btn } from './Contact.styled';
+import {
+  Item,
+  NameWrapper,
+  Letters,
+  Text,
+  Phone,
+  DeleteBtn,
+} from './Contact.styled';
 
 export const Contact = ({ info: { id, name, number }, onDelete }) => {
   return (
@@ -21,14 +28,14 @@ export const Contact = ({ info: { id, name, number }, onDelete }) => {
           </Phone>
         </div>
       </NameWrapper>
-      <Btn
+      <DeleteBtn
         type="button"
         onClick={() => {
           onDelete(id);
         }}
       >
         <MdDelete size={14} />
-      </Btn>
+      </DeleteBtn>
     </Item>
   );
 };

@@ -8,9 +8,23 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
+  display: block;
+  width: 50%;
+  box-sizing: border-box;
   margin-top: 10px;
-  width: 200px;
-  &:focus-visible {
-    outline-color: blue;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  outline: none;
+
+  &:hover,
+  :focus {
+    border-color: #00bfff;
   }
+
+  // margin-top: 10px;
+  // width: 200px;
+  // &:focus-visible {
+  //   outline-color: blue;
+  // }
 `;
