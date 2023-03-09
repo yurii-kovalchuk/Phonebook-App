@@ -32,7 +32,15 @@ export const UpdatingForm = () => {
         autoClose: 2000,
       });
       return;
+    } else if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      toast.error(`Contact is already in list`);
+      return;
     }
+
     dispatch(updateContact([id, { name, number }]));
     resetForm();
     dispatch(closeModal());
