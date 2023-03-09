@@ -19,6 +19,11 @@ export const NameWrapper = styled.div`
   align-items: center;
 `;
 
+export const BtnWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const Letters = styled.span`
   display: flex;
   align-items: center;
@@ -55,7 +60,7 @@ export const Phone = styled.a`
 
 export const DeleteBtn = styled.button`
   display: block;
-  margin-left: 20px;
+  margin-left: 10px;
   padding: 5px;
   width: 24px;
   height: 24px;
@@ -73,13 +78,25 @@ export const DeleteBtn = styled.button`
   &:active {
     background-color: #b22222;
   }
+`;
 
-  // &:hover,
-  // :focus {
-  //   background-color: #b22222;
-  // }
+export const EditBtn = styled.button`
+  display: block;
+  padding: 5px;
+  width: 24px;
+  height: 24px;
+  border: transparent;
+  border-radius: 4px;
+  background-color: grey;
+  color: #f0ffff;
+  cursor: pointer;
 
-  // &:active {
-  //   background-color: darkred;
-  // }
+  &:hover,
+  :focus {
+    background-color: green;
+  }
+
+  &:active {
+    background-color: #006400;
+  }
 `;

@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import { MdDelete } from 'react-icons/md';
+import { FiEdit2 } from 'react-icons/fi';
 import { BsTelephoneFill } from 'react-icons/bs';
 import {
   Item,
   NameWrapper,
+  BtnWrapper,
   Letters,
   Text,
   Phone,
   DeleteBtn,
+  EditBtn,
 } from './Contact.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from 'redux/modal/slice';
@@ -37,23 +40,26 @@ export const Contact = ({ info: { id, name, number } }) => {
             </Phone>
           </div>
         </NameWrapper>
-
-        <button
-          type="button"
-          onClick={() => {
-            dispatch(openModal(id));
-          }}
-        >
-          edit
-        </button>
-        <DeleteBtn
-          type="button"
-          onClick={() => {
-            dispatch(deleteContact(id));
-          }}
-        >
-          <MdDelete size={14} />
-        </DeleteBtn>
+        <BtnWrapper>
+          <EditBtn
+            type="button"
+            title="Edit"
+            onClick={() => {
+              dispatch(openModal(id));
+            }}
+          >
+            <FiEdit2 size={14} />
+          </EditBtn>
+          <DeleteBtn
+            type="button"
+            title="Delete"
+            onClick={() => {
+              dispatch(deleteContact(id));
+            }}
+          >
+            <MdDelete size={14} />
+          </DeleteBtn>
+        </BtnWrapper>
       </Item>
       {isModal && <Modal />}
     </>

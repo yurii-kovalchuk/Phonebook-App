@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { updateContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { selectModalIdx } from 'redux/modal/selectors';
@@ -11,6 +12,8 @@ import {
   Btn,
   LabelsWrap,
   BtnIcon,
+  BtnsWrap,
+  BtnCancel,
 } from './UpdatingForm.styled';
 
 export const UpdatingForm = () => {
@@ -24,6 +27,12 @@ export const UpdatingForm = () => {
     number: currentContact.number,
   };
   const onSubmit = ({ name, number }, { resetForm }) => {
+    if (name === initialValues.name && number === initialValues.number) {
+      toast.error('Please change contact information and try again', {
+        autoClose: 2000,
+      });
+      return;
+    }
     dispatch(updateContact([id, { name, number }]));
     resetForm();
     dispatch(closeModal());
@@ -54,10 +63,20 @@ export const UpdatingForm = () => {
             />
           </Label>
         </LabelsWrap>
-        <Btn type="submit">
-          <span>Edit contact </span>
-          <BtnIcon size={20} />
-        </Btn>
+        <BtnsWrap>
+          <Btn type="submit">
+            <span>Edit contact </span>
+            <BtnIcon size={20} />
+          </Btn>
+          <BtnCancel
+            type="button"
+            onClick={() => {
+              dispatch(closeModal());
+            }}
+          >
+            <span>Cancel </span>
+          </BtnCancel>
+        </BtnsWrap>
       </FormWrapper>
     </Formik>
   );

@@ -59,17 +59,31 @@ export const Btn = styled.button`
   color: #f8f8ff;
   background-color: #00bfff;
 
-  border: transparent;
+  border: 1px solid #00bfff;
   border-radius: 5px;
 
   &:hover,
   :focus {
     background-color: #188ce8;
-    color: #f0ffff;
+    border-color: #188ce8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
 `;
 
 export const BtnIcon = styled(FiEdit)`
   // margin-left: 10px;
+`;
+
+export const BtnsWrap = styled.div`
+  display: flex;
+`;
+
+export const BtnCancel = styled(Btn)`
+  color: #00bfff;
+  background-color: #f8f8ff;
+
+  &:hover,
+  :focus {
+    color: #f0ffff;
+  }
 `;

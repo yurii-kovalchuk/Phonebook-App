@@ -1,5 +1,7 @@
 import { Formik } from 'formik';
-import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from 'redux/contacts/selectors';
 import {
   FormWrapper,
   Label,
@@ -8,12 +10,28 @@ import {
   LabelsWrap,
   BtnIcon,
 } from './ContactForm.styled';
+import { addContact } from 'redux/contacts/operations';
 
-export const ContactForm = ({ addContacts }) => {
+export const ContactForm = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
   const initialValues = {
     name: '',
     number: '',
   };
+
+  const addContacts = (name, number) => {
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      toast.error(`Contact is already in list`);
+    } else {
+      dispatch(addContact({ name, number }));
+    }
+  };
+
   const onSubmit = ({ name, number }, { resetForm }) => {
     addContacts(name, number);
     resetForm();
@@ -51,8 +69,4 @@ export const ContactForm = ({ addContacts }) => {
       </FormWrapper>
     </Formik>
   );
-};
-
-ContactForm.proprTypes = {
-  addContact: PropTypes.func.isRequired,
 };

@@ -1,4 +1,3 @@
-// import { TbLogout } from 'react-icons/tb';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUserName } from 'redux/auth/selectors';
