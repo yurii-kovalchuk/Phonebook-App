@@ -4,7 +4,7 @@ import { Form, Field } from 'formik';
 
 export const FormWrapper = styled(Form)`
   margin-bottom: 50px;
-  padding: 30px 10px;
+  padding: 30px;
   text-align: center;
   background-color: white;
   border-radius: 5px;
