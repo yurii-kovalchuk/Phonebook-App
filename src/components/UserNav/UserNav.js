@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
-import { selectUserName } from 'redux/auth/selectors';
+import { selectUserEmail } from 'redux/auth/selectors';
 import { LogOutBtn, LogOutIcon, UserWrap } from './UserNav.styled';
 
 export const UserNav = () => {
-  const userName = useSelector(selectUserName);
+  const userEmail = useSelector(selectUserEmail);
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -12,7 +12,7 @@ export const UserNav = () => {
   };
   return (
     <UserWrap>
-      <span>Hi, {userName} </span>
+      <span>{userEmail}</span>
       <LogOutBtn onClick={handleClick}>
         <span>Log out</span>
         <LogOutIcon />

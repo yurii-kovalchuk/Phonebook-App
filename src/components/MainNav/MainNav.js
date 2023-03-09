@@ -8,7 +8,7 @@ export const MainNav = () => {
   return (
     <div>
       <MainNavLink to="/">Home</MainNavLink>
-      {isLoggedIn && <MainNavLink to="/phonebook">Phonebook</MainNavLink>}
+      {isLoggedIn && <MainNavLink to="/contacts">Contacts</MainNavLink>}
     </div>
   );
 };

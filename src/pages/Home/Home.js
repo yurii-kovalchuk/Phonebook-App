@@ -23,7 +23,7 @@ const Home = () => {
             Welcome, {name} in <HomeAccent>Phonebook App</HomeAccent>
           </HomeTitle>
           <HomeNavigate>
-            <HomeLinkAddContact to="/phonebook">
+            <HomeLinkAddContact to="/contacts">
               <span>Add contact</span> <BsFillPersonPlusFill size="18px" />
             </HomeLinkAddContact>
           </HomeNavigate>
