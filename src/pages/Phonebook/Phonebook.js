@@ -9,13 +9,13 @@ import {
   selectContacts,
   selectError,
   selectIsLoading,
+  selectVisibleContacts,
 } from 'redux/contacts/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
-import { selectFilter } from 'redux/filter/selectors';
 
 const Phonebook = () => {
   const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectFilter);
+  const visibleContacts = useSelector(selectVisibleContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -24,15 +24,6 @@ const Phonebook = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const filteredContacts = () => {
-    const normalizeFilter = filter.toLowerCase();
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(normalizeFilter)
-    );
-  };
-
-  const vivsibleContacts = filteredContacts();
-
   return (
     <PhonebookWrap>
       <ContactForm />
@@ -40,10 +31,10 @@ const Phonebook = () => {
       <Filter />
       {isLoading && !error && <b>Request in progress...</b>}
       {contacts.length === 0 ? <p>Your contacts will be here...</p> : null}
-      {vivsibleContacts.length === 0 && contacts.length !== 0 ? (
+      {visibleContacts.length === 0 && contacts.length !== 0 ? (
         <p>Sorry! There are no contacts with this name</p>
       ) : (
-        <ContactsList contacts={vivsibleContacts} />
+        <ContactsList />
       )}
     </PhonebookWrap>
   );
