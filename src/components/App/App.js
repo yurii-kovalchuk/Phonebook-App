@@ -26,7 +26,7 @@ export const App = () => {
     <>
       <ToastContainer autoClose={1000} position="top-center" />
       {isRefreshing ? (
-        <p>Refreshing user...</p>
+        <p>Loading...</p>
       ) : (
         <Routes>
           <Route path="/" element={<Layout />}>
