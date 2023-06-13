@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "react-phonebook-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yurii-kovalchuk.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://yurii-kovalchuk.github.io/react-phonebook-app/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.3",
